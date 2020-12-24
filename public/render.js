@@ -1,9 +1,8 @@
+import { COURT_SIZE, BALL_RADIUS } from './config.js';
+
 const { p5: P5 } = window;
 
-const COURT_SIZE = { x: 1000, y: 600 };
-const BALL_RADIUS = 15;
-
-const renderer = new P5((sketch) => {
+const start = () => new P5((sketch) => {
   const renderBall = (position, diameter) => {
     sketch.fill(255);
     sketch.stroke(255);
@@ -32,3 +31,7 @@ const renderer = new P5((sketch) => {
     renderBall(window.ballPosition, BALL_RADIUS * 2);
   };
 }, document.getElementById('game'));
+
+export default {
+  start,
+};
